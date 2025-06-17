@@ -1,500 +1,536 @@
- 
-
-
-
-
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<!-- HEAD -->
+ <!DOCTYPE html>
+<html lang="pt-BR">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2A3B47">
+<link rel="apple-touch-icon" href="logocerto.png">
+<link rel="icon" type="image/png" href="logocerto.png">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVVALENAREDE & FACEBOOK</title>
+<link rel="icon" type="image/png" href="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png">
+    <link rel="shortcut icon" href="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png" type="image/png">
+    <link rel="apple-touch-icon" href="logocerto.png">
+<link rel="icon" type="image/png" href="logocerto.png">
+    
+    <!-- Ícone do site -->
+    <link rel="icon" href="logo192.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo192.png">
+    <meta name="theme-color" content="#ffffff">
 
-	<title>Maicon Paulista | Atacante Profissional</title>
-	
-	<meta name="keywords" content="Maicon Paulista, Jogador de Futebol, Lateral Esquerdo, Futebol Brasileiro, Jogador Profissional" />
-	<meta name="description" content="Site oficial do jogador Maycon Paulista, atacante profissional de 29 anos com carreira no futebol brasileiro buscando oportunidades no exterior" />	
-	<meta name="author" content="Ellos design - Criação de Sites"/>
-	<meta name="reply-to" content="contato@mayconpaulista.com"/>
-	<meta http-equiv="cache-control" content="public"/> 
-	<meta http-equiv="Pragma" content="public"/>  
-	<meta name="language" content="pt-br"/>
-	<meta name="owner" content="Ellos Design"/>
-	<meta name="Audience" content="ALL"/>
-	<meta name="rating" content="general"/>
-	<meta name="GOOGLEBOT" content="index,follow"/>
-	<meta name="MSNBot" content="index,follow"/>
-	<meta name="InktomiSlurp" content="index,follow"/>
-	<meta name="Unknownrobot" content="index,follow"/>
-	<meta name="Robots" content="index,follow"/>
-	<meta property="og:image" content="https://www.maiconpaulista.com/logo.png"/>
-	<meta name="revisit-after" content="1day"/>
+    <!-- Manifest para Progressive Web App -->
+    <link rel="manifest" href="manifest.json">
 
-	<!-- SHARE TAGS -->
-	<meta property="og:url" content="https://www.mayconpaulista.com/" />
-	<meta property="og:title" content="Maicon Paulista | Atacante Profissional" />
-	<meta property="og:description" content="Site oficial do atacante Maicon Paulista, jogador profissional de 29 anos buscando oportunidades no exterior" />
-	<meta property="og:image" content="https://www.mayconpaulista.com/logo.png" />
-	<!-- //SHARE TAGS -->
+    <style>
+        :root {
+            --primary: #2A3B47;
+            --secondary: #B38E5D;
+            --accent: #FF6B00;
+            --orange: #FF8C00;
+        }
 
-	<meta name="theme-color" content="#0A357D" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui;
+        }
 
-	<!-- FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        body {
+            background: #f9f9f9;
+            line-height: 1.6;
+        }
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="https://www.procurandocraques.com/app/assets/css/style.min.css?v=4">
-	
-	<link rel="shortcut icon" href="https://www.procurandocraques.com/favicon.ico"/>
+        .main-header {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .main-header h1 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: var(--secondary);
+        }
+
+        /* Estilo especial para o primeiro botão */
+        .nav-button.agua-quente {
+            background: #FF0000; /* Vermelho */
+            color: #FFFF00; /* Amarelo */
+        }
+
+        .nav-button.agua-quente:hover {
+            background: #CC0000; /* Vermelho mais escuro no hover */
+            color: #FFFF00; /* Mantém amarelo no hover */
+        }
+
+        .main-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-card {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .social-card:hover {
+            transform: scale(1.05);
+            background: var(--secondary);
+        }
+
+        .contact-form {
+            background: var(--primary);
+            padding: 2rem;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 2px solid var(--secondary);
+            border-radius: 5px;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .contact-form button {
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: var(--accent);
+        }
+
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .fixed-button-left {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--orange);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .fixed-button:hover,
+        .fixed-button-left:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        /* NOVOS ESTILOS PARA A SEÇÃO DE NOTÍCIAS */
+        .news-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .news-title {
+            text-align: center;
+            font-size: 3rem;
+            margin: 2rem 0;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+        
+        .news-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        
+        .news-column {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .news-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .news-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .news-item p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        .news-item time {
+            display: block;
+            color: #888;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        .news-category {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .programming-column {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .programming-item {
+            display: flex;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .programming-time {
+            font-weight: bold;
+            color: var(--primary);
+            margin-right: 1rem;
+            min-width: 60px;
+        }
+        
+        .programming-title {
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .sidebar {
+                order: -1;
+            }
+
+            .main-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .fixed-button,
+            .fixed-button-left {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+                bottom: 10px;
+            }
+            
+            /* Responsivo para seção de notícias */
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .videos-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-<body class="home">
+<body>
+    <!-- Cabeçalho com o logo e título -->
+    <header class="main-header">
+        <img src="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png" alt="Logo">
+        <h1>TVVALENAREDE & FACEBOOK</h1>
+    </header>
 
-<!-- WRAPPER -->
-<div class="wrapper">
-	
-	<!-- HEADER -->
-	<header class="header">
-	<div class="container">
-
-		<!-- MENU MOBILIE BUTTON -->
-		<span class="menu-btn-mobile" id="menu-btn-mobile"></span>
-			
-		<!-- LOGO -->
-		<a href="#" title="Maicon Paulista | Lateral Esquerdo" alt="Maicon Paulista" class="header-logo colored-logo"><img src="https://www.procurandocraques.com/peneira-de-futebol.png" alt="Jogador Brilhante"></a>
-		<a href="#" title="Maicon Paulista | Lateral Esquerdo" class="header-logo white-logo"><img src="https://www.procurandocraques.com/uploads/img/loja_logo/26/87adf0d289b2ebb0047d5b338e3b271b.png" alt="Jogador Brilhante"></a>
-
-		<!-- DIREITA -->
-		<div class="header-direita">
-
-			<!-- BOTÕES -->
-			<div class="header-botoes">	
-				<a href="https://wa.me/5512997690407" class="btn btn-sm2 btn-primario"><i class="fab fa-whatsapp"></i> Contato</a>
-			</div>
-			<!-- //BOTÕES -->
-
-			<!-- MENU LATERAL -->
-			<nav class="fdx-menu lateral">
-	<div class="container">
-
-		<ul class="fdx-menu-1-level">
-			<li><a href="#sobre">Sobre</a></li>	
-			<li><a href="#carreira">Carreira</a></li>	
-			<li><a href="#videos">Vídeos</a></li>	
-			<li><a href="#estatisticas">Estatísticas</a></li>
-			<li><a href="#contato">Contato</a></li>			
-		</ul>
-		
-	</div>		
-</nav>			
-
-		</div>
-		<!-- //DIREITA -->
-			
-	</div>
-</header>
-
-<!-- MENU MOBILE -->
-<div class="cd-dropdown-wrapper">
-    <nav class="cd-dropdown">
-        <ul class="cd-dropdown-content">
+    <div class="grid-container">
+        <!-- Sidebar Esquerda -->
+        <div class="sidebar">
+            <a href="https://tvvalenarede.github.io/redesocial1/" class="nav-button agua-quente"> CONHEÇA AQUI O SUPER SITE DO MAICON JOGADOR DE FUTEBOL HS</a>
             
-            <!-- HEADER -->
-            <li class="cd-dropdown-header">
-                <a href="#" class="cd-dropdown-logo">
-                    <img src="https://www.procurandocraques.com/uploads/img/loja_logo/26/87adf0d289b2ebb0047d5b338e3b271b.png" alt="Jogador Brilhante">
-                </a>
-            </li>
-			<!-- //HEADER -->
-			
-			<li><a href="#sobre">Sobre</a></li>
-			<li><a href="#carreira">Carreira</a></li>
-			<li><a href="#videos">Vídeos</a></li>
-			<li><a href="#estatisticas">Estatísticas</a></li>
-			<li><a href="#contato">Contato</a></li>
-
-        </ul> <!-- .cd-dropdown-content -->
-    </nav> <!-- .cd-dropdown -->
-</div> <!-- .cd-dropdown-wrapper -->
-	<!-- BUSCA -->
-	<section class="busca" style="background-image: url('https://www.procurandocraques.com/app//assets/img/bg10.jpg');">
-    <span class="mascara"></span>
-    <div class="container"> 
-        <div>
-            <h2 class="titulo" data-aos="fade-up">Maicon Paulista</h2>
-            <h3 class="subtitulo" data-aos="fade-up">Lateral Esquerdo | 29 anos | Curitiba/PR</h3>
-
-            <!-- BOTÕES DE CONTATO -->
-            <div class="btn-container" data-aos="fade-up" data-aos-delay="400">
-                <a href="#videos" class="btn btn-primario"><i class="fas fa-play"></i> Ver Vídeos</a>
-                <a href="https://wa.me/5512997690407" class="btn btn-primario outline"><i class="fab fa-whatsapp"></i> Contato</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="section-divider up">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path d="M0 100 C40 0 60 0 100 100 Z"></path>
-    </svg>
-</div>	
-	<!-- SOBRE -->
-	<section class="secao home-sobre" id="sobre">
-    <div class="container">
-
-    <div class="grid-7 grid-m-12 grid-s-12 home-sobre-texto" data-aos="fade-up">
-        
-        <h2 class="titulo">Sobre Maicon Paulista</h2>
-
-        <h3 class="texto"><p style="text-align: justify;">Maicon Paulista é um Lateral Esquerdo brasileiro de 29 anos, natural de Curitiba/PR, com vasta experiência no futebol brasileiro. Com um estilo de jogo versátil, Maicon se destaca por sua velocidade, habilidade técnica e faro de gol.</p>
-
-<p style="text-align: justify;">Atualmente buscando oportunidades no exterior, Maicon já passou por diversos clubes do cenário nacional, acumulando experiência e demonstrando consistência em seu desempenho em campo.</p>
-
-<p style="text-align: justify;">Com um físico atlético e mentalidade vencedora, Maicon Paulista é o tipo de jogador que faz a diferença em qualquer equipe, seja com seus gols, assistências ou simplesmente com sua presença em campo.</p>
-</h3> 
-
-        <div class="btn-container">
-            <a href="#carreira" class="btn btn-primario">Ver Carreira</a>
+            <a href="https://www.facebook.com/TVRBRAZIL" class="nav-button agua-quente" class="nav-button">TVVALENAREDE LIVE</a>
+            <a href="https://tvvalenarede.github.io/jogos/" class="nav-button">Shekinah Energéticos</a>
+            <a href="https://casa3-irmaos.webnode.page" class="nav-button">CASA 3 IRMÃOS</a>
+            <a href="https://www.youtube.com/watch?v=z2j0Yzf8Myk&t=34s" class="nav-button">PREMIAÇÃO ACEESP</a>
         </div>
 
-    </div>
-    
-    <div class="grid-5 grid-m-12 grid-s-12 home-sobre-foto">       
-        <img src="https://www.procurandocraques.com/app/assets/img/player.png" alt="Maycon Paulista">
-    </div>
+        <!-- Conteúdo Principal -->
+        <div class="main-content">
+            <div class="social-grid">
+                <a href="https://made-center7.webnode.page" class="social-card">FUTEBOL</a>
+                <a href="https://www.youtube.com/channel/UC2d71oRHuTsosOap7GeYT4g" class="social-card">TVVALENAREDE YOUTUBE LIVE</a>
+                <a href="https://bar-do-osmar-de-taubate-s-p.webnode.page/" class="social-card">BAR DO OSMAR</a>
+                <a href="https://casa3-irmaos.webnode.page/?_gl=1*1c6qg4l*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1LjE1MzI2NjMxOTAuMTc0MzUzMDU1Mi4xNzQzNTMwNTUx" class="social-card">CASA 3 IRMÃOS</a>
+                <a href="https://tvvalenarede.webnode.page/?_gl=1*1p8g9b5*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1LjkzMjUyOTk2Mi4xNzQyMzA0NTI5LjE3NDIzMDQ1Mjg." class="social-card">ADVOGADOS ASSOCIADOS J.E.C.S</a>
+                <a href="https://serginhos-centro-automotivo-de-taubate.webnode.page/" class="social-card">SERGINHO PNEUS</a>
+            </div>
 
-    </div>
-</section>
-
-	<!-- BLOCOS HOME -->
-	<section class="secao blocos-home" style="background-image: url('https://www.procurandocraques.com/app//assets/img/bg9.jpg');">
-    <span class="mascara"></span>
-    <div class="container">
-
-    <!-- CARROSSEL -->
-    <div class="carrosel carrosel-blocos">
-
-        <!-- Repete -->
-        <a href="#carreira" class="bloco-home"  data-aos="zoom-in">
-            <div class="bloco-home-icon"><i class="fas fa-trophy"></i></div>
-            <div class="bloco-home-titulo">Experiência</div>
-            <div class="bloco-home-texto">Mais de 10 anos de carreira no futebol brasileiro</div>
-        </a>
-        <!-- //Repete -->
-
-        <!-- Repete -->
-        <a href="#videos" class="bloco-home"  data-aos="zoom-in">
-            <div class="bloco-home-icon"><i class="fas fa-video"></i></div>
-            <div class="bloco-home-titulo">Habilidades</div>
-            <div class="bloco-home-texto">Assista aos vídeos e confira o talento de Maycon</div>
-        </a>
-        <!-- //Repete -->
-
-        <!-- Repete -->
-        <a href="#estatisticas" class="bloco-home"  data-aos="zoom-in">
-            <div class="bloco-home-icon"><i class="fas fa-chart-line"></i></div>
-            <div class="bloco-home-titulo">Estatísticas</div>
-            <div class="bloco-home-texto">Números que comprovam sua qualidade</div>
-        </a>
-        <!-- //Repete -->
-
-        <!-- Repete -->
-        <a href="#contato" class="bloco-home"  data-aos="zoom-in">
-            <div class="bloco-home-icon"><i class="fas fa-phone-alt"></i></div>
-            <div class="bloco-home-titulo">Contato</div>
-            <div class="bloco-home-texto">Entre em contato com o empresário André Bonani</div>
-        </a>
-        <!-- //Repete -->
-    
-    </div>
-    <!-- //CARROSSEL -->
-
-    </div>
-</section>	
-
-<!-- CARREIRA -->
-<section class="secao" id="carreira">
-    <div class="container">
-        <h2 class="titulo">Carreira</h2>
-        
-        <div class="timeline">
-            <div class="timeline-item" data-aos="fade-up">
-                <div class="timeline-year">2010-2012</div>
-                <div class="timeline-content">
-                    <h3>Início de Carreira</h3>
-                    <p>Formação nas categorias de base de clubes paranaenses, com destaque no Campeonato Paranaense Juvenil.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item" data-aos="fade-up">
-                <div class="timeline-year">2013-2015</div>
-                <div class="timeline-content">
-                    <h3>Primeiro Contrato Profissional</h3>
-                    <p>Estreia no futebol profissional pelo Paraná Clube, participando do Campeonato Brasileiro da Série B.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item" data-aos="fade-up">
-                <div class="timeline-year">2016-2018</div>
-                <div class="timeline-content">
-                    <h3>Consolidação</h3>
-                    <p>Passagem por clubes do interior de São Paulo, com destaque no Campeonato Paulista e Copa do Brasil.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item" data-aos="fade-up">
-                <div class="timeline-year">2019-2021</div>
-                <div class="timeline-content">
-                    <h3>Experiência Nacional</h3>
-                    <p>Atuação em clubes do Nordeste brasileiro, acumulando experiência em diferentes estilos de jogo.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item" data-aos="fade-up">
-                <div class="timeline-year">2022-Presente</div>
-                <div class="timeline-content">
-                    <h3>Busca por Novos Desafios</h3>
-                    <p>Preparado para encarar o desafio do futebol internacional, com maturidade e bagagem técnica.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- VÍDEOS -->
-<section class="secao" id="videos" style="background-color: #f5f5f5;">
-    <div class="container">
-        <h2 class="titulo">Vídeos</h2>
-        
-        <div class="grid-4 grid-m-6 grid-s-12 video-item" data-aos="fade-up">
-            <div class="video-wrapper">
-                <iframe width="100%" height="200" src="https://youtu.be/PrKepAuxwJ8?si=6gAe_owfPQYOVQtr" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <h3>Melhores Momentos 2023</h3>
-            </div>
-        </div>
-        
-        <div class="grid-4 grid-m-6 grid-s-12 video-item" data-aos="fade-up">
-            <div class="video-wrapper">
-                <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=cDUpyoisRYE&t=13s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <h3>Gols e Assistências</h3>
-            </div>
-        </div>
-        
-        <div class="grid-4 grid-m-6 grid-s-12 video-item" data-aos="fade-up">
-            <div class="video-wrapper">
-                <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=tgTc22rQUoc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <h3>Treinamentos</h3>
-            </div>
-        </div>
-        
-        <div class="clearfix"></div>
-        
-        <div class="btn-container" style="margin-top: 30px;">
-            <a href="https://www.youtube.com" target="_blank" class="btn btn-primario"><i class="fab fa-youtube"></i> Ver Mais Vídeos</a>
-        </div>
-    </div>
-</section>
-
-<!-- ESTATÍSTICAS -->
-<section class="secao" id="estatisticas">
-    <div class="container">
-        <h2 class="titulo">Estatísticas</h2>
-        
-        <div class="stats-container">
-            <div class="grid-3 grid-m-6 grid-s-12 stat-item" data-aos="fade-up">
-                <div class="stat-number">150+</div>
-                <div class="stat-label">Jogos Profissionais</div>
-            </div>
-            
-            <div class="grid-3 grid-m-6 grid-s-12 stat-item" data-aos="fade-up">
-                <div class="stat-number">45</div>
-                <div class="stat-label">Gols Marcados</div>
-            </div>
-            
-            <div class="grid-3 grid-m-6 grid-s-12 stat-item" data-aos="fade-up">
-                <div class="stat-number">28</div>
-                <div class="stat-label">Assistências</div>
-            </div>
-            
-            <div class="grid-3 grid-m-6 grid-s-12 stat-item" data-aos="fade-up">
-                <div class="stat-number">5</div>
-                <div class="stat-label">Clubes Diferenciados</div>
-            </div>
-        </div>
-        
-        <div class="stats-chart" data-aos="fade-up">
-            <h3>Desempenho por Temporada</h3>
-            <img src="https://via.placeholder.com/800x400?text=Gráfico+de+Desempenho" alt="Gráfico de Desempenho" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
-        </div>
-    </div>
-</section>
-
-<!-- CONTATO -->
-<section class="secao" id="contato" style="background-color: #0A357D; color: #fff;">
-    <div class="container">
-        <h2 class="titulo" style="color: #fff;">Contato</h2>
-        
-        <div class="grid-6 grid-m-12 contact-info" data-aos="fade-up">
-            <h3>André Bonani</h3>
-            <p><i class="fas fa-briefcase"></i> Empresário</p>
-            <p><i class="fab fa-whatsapp"></i> (12) 99769-0407</p>
-            <p><i class="fas fa-envelope"></i> contato@maiconpaulista.com</p>
-            
-            <div class="btn-container" style="margin-top: 20px;">
-                <a href="https://wa.me/5512997690407" class="btn btn-primario"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a href="mailto:contato@mayconpaulista.com" class="btn btn-primario outline"><i class="fas fa-envelope"></i> E-mail</a>
-            </div>
-        </div>
-        
-        <div class="grid-6 grid-m-12 contact-form" data-aos="fade-up">
-            <form id="form-contato" class="form-validation">
-                <div class="campo-container">
-                    <input type="text" name="nome" class="campo" placeholder="Seu Nome" required>
-                </div>
-                
-                <div class="campo-container">
-                    <input type="email" name="email" class="campo" placeholder="Seu E-mail" required>
-                </div>
-                
-                <div class="campo-container">
-                    <input type="tel" name="telefone" class="campo" placeholder="Seu Telefone">
-                </div>
-                
-                <div class="campo-container">
-                    <textarea name="mensagem" class="campo" placeholder="Sua Mensagem" rows="4" required></textarea>
-                </div>
-                
-                <div class="btn-container">
-                    <button type="submit" class="btn btn-primario">Enviar Mensagem</button>
-                </div>
+            <form class="contact-form" id="meuFormulario" action="https://formsubmit.co/tvrbrazil@gmail.com" method="POST">
+                <input type="text" id="nome" name="Nome" placeholder="Nome" required>
+                <input type="email" id="email" name="E-mail" placeholder="E-mail" required>
+                <textarea id="mensagem" name="Mensagem" rows="5" placeholder="Mensagem" required></textarea>
+                <input type="hidden" name="_subject" value="Nova mensagem do site">
+                <button type="submit">ENVIAR MENSAGEM</button>
             </form>
         </div>
-    </div>
-</section>
-	
-</div>
-<!-- //WRAPPER -->
 
-<!-- FOOTER -->
-<footer class="footer">
-	<div class="container">
-
-		<!-- FRASE -->
-		<div class="footer-frase">
-		<i class="fas fa-quote-left"></i> "O sucesso nasce do querer, da determinação e persistência em se chegar a um objetivo." <i class="fas fa-quote-right"></i>
-		</div>
-		<!-- //FRASE -->
-
-		<!-- INSTITUCIONAL -->
-		<div class="footer-bloco footer-inst">
-
-			<h2>Menu</h2>
-
-			<ul class="footer-lista">
-				<li><a href="#sobre">Sobre</a></li>
-				<li><a href="#carreira">Carreira</a></li>	
-				<li><a href="#videos">Vídeos</a></li>	
-				<li><a href="#estatisticas">Estatísticas</a></li>	
-				<li><a href="#contato">Contato</a></li>		
-			</ul>
-
-		</div>
-		<!-- //INSTITUCIONAL -->
-
-		<!-- REDES SOCIAIS -->
-		<div class="footer-bloco footer-duvidas">
-
-			<h2>Redes Sociais</h2>
-
-			<ul class="footer-lista">
-				<li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-				<li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-				<li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>	
-			</ul>
-
-		</div>
-		<!-- //REDES SOCIAIS -->
-
-		<!-- CONTATO -->
-		<div class="footer-bloco footer-modalidades">
-
-			<h2>Contato</h2>
-
-			<ul class="footer-lista">
-				<li><i class="fab fa-whatsapp"></i> (12) 99769-0407</li>
-				<li><i class="fas fa-envelope"></i> contato@maiconpaulista.com</li>
-				<li><i class="fas fa-map-marker-alt"></i> Curitiba/PR - Brasil</li>
-			</ul>
-
-		</div>
-		<!-- //CONTATO -->
-
-		<!-- NEWSLETTER -->
-		<div class="footer-bloco footer-newsletter">
-			
-			<h2>Fique Atualizado</h2>
-
-			<form id="form-newsletter" class="form-validation">
-				<p class="texto">Receba novidades sobre a carreira de Maycon Paulista</p>
-					
-				<div class="campo-container">
-					<input type="email" name="email" class="campo" placeholder="Digite seu e-mail" required>
-				</div>
-
-				<button type="submit" class="btn btn-secundario">Assinar</button>
-			</form>
-		</div>
-		<!-- //NEWSLETTER -->
-
-	</div>
-
-	<!-- BARRA FOOTER -->
-	<div class="barra-footer">
-		<div class="container">
-			<div class="grid-12 center">TVVALENAREDE WhatsApp 12-99769-0407 &copy; 2023 - Todos os direitos reservados</div>
-		</div>
-	</div>
-	<!-- //BARRA FOOTER -->
-
-</footer>
-<!-- //FOOTER -->
-
-<!-- GERAIS -->
-<!-- VOLTAR AO TOPO -->
-<div class="gotop"></div>
-
-<!-- LOADING -->
-<div class="loading">
-    <div class="loading-wrap">
-        <div class="loader">Aguarde..</div>
-    </div>
-</div>
-
-<!-- ALERTA -->
-<div class="modal" id="modal-alert">
-    <div class="modal-wrap modal-sm">
-        <span class="modal-btn-close modal-close" data-modal="modal-alert"></span>
-        <div class="modal-header">
-            <span class="modal-titulo" id="alert-titulo"></span>          
+        <!-- Sidebar Direita -->
+        <div class="sidebar">
+            <a href="https://www.facebook.com/?locale=pt_BR" class="nav-button">FACEBOOK</a>
+            <a href="https://www.facebook.com/tvvalenarede2" class="nav-button">FACEBOOK2</a>
+            <a href="https://www.instagram.com/tvvalenarede?igsh=aWF0bjdueGR5N3cw" class="nav-button">INSTAGRAM1</a>
+            <a href="https://www.instagram.com/tvvalenarede2/" class="nav-button">INSTAGRAM2</a>
+            <a href="http://youtube.com/tvvalenarede" class="nav-button">YOUTUBE</a>
+            <a href="https://www.tiktok.com/@tvvalenarede?_t=ZM-8uwnC2d12ZD&_r=1" class="nav-button">TIKTOK</a>
         </div>
-        <div class="modal-body">
-            <div class="modal-alert-icon">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-times-circle"></i>
+    </div>
+
+    <!-- NOVA SEÇÃO DE NOTÍCIAS E VÍDEOS -->
+    <div class="news-section">
+        <h2 class="news-title">TVVALENAREDE NOTÍCIAS</h2>
+        
+        <!-- Container de Vídeos -->
+        <div class="videos-container">
+            <div class="video-item">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/z2j0Yzf8Myk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3>PREMIAÇÃO ACEESP</h3>
             </div>
-            <p class="texto" id="alert-texto"></p>
-            <div class="modal-btn center">	
-                <button type="button" class="btn modal-close" data-modal="modal-alert">Fechar</button>
-            </div>  
+            
+            <div class="video-item">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3>Últimas Notícias do Brasil</h3>
+            </div>
+            
+            <div class="video-item">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3>Entrevistas Exclusivas</h3>
+            </div>
+        </div>
+        
+        <!-- Container de Notícias e Programação -->
+        <div class="news-container">
+            <div class="news-column">
+                <h2>Últimas Notícias</h2>
+                
+                <div class="news-item">
+                    <span class="news-category">Política</span>
+                    <h3>Novas medidas econômicas são anunciadas pelo governo</h3>
+                    <p>O ministro da economia apresentou hoje um pacote com medidas para estimular o crescimento econômico e conter a inflação.</p>
+                    <time>Há 2 horas</time>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-category">Esportes</span>
+                    <h3>Time local vence campeonato estadual</h3>
+                    <p>Com uma vitória por 3 a 1, o time da cidade conquistou o título estadual após 10 anos de espera.</p>
+                    <time>Há 5 horas</time>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-category">Cultura</span>
+                    <h3>Festival de cinema começa nesta sexta</h3>
+                    <p>A 15ª edição do festival traz produções nacionais e internacionais com entrada gratuita em diversos locais da cidade.</p>
+                    <time>Há 8 horas</time>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-category">Saúde</span>
+                    <h3>Nova unidade de saúde é inaugurada</h3>
+                    <p>O prefeito inaugurou hoje a nova UPA que vai atender mais de 50 mil pessoas na região norte da cidade.</p>
+                    <time>Ontem, 18:30</time>
+                </div>
+            </div>
+            
+            <div class="programming-column">
+                <h2>Programação TVVALENAREDE</h2>
+                
+                <div class="programming-item">
+                    <span class="programming-time">06:00</span>
+                    <span class="programming-title">Bom Dia Valenarede</span>
+                </div>
+                
+                <div class="programming-item">
+                    <span class="programming-time">09:00</span>
+                    <span class="programming-title">Jornal da Manhã</span>
+                </div>
+                
+                <div class="programming-item">
+                    <span class="programming-time">12:00</span>
+                    <span class="programming-title">Almoço Notícias</span>
+                </div>
+                
+                <div class="programming-item">
+                    <span class="programming-time">15:00</span>
+                    <span class="programming-title">Tarde Esportiva</span>
+                </div>
+                
+                <div class="programming-item">
+                    <span class="programming-time">18:00</span>
+                    <span class="programming-title">Jornal da TVVALENAREDE</span>
+                </div>
+                
+                <div class="programming-item">
+                    <span class="programming-time">20:00</span>
+                    <span class="programming-title">Programa de Entrevistas</span>
+                </div>
+                
+                <div class="programming-item">
+                    <span class="programming-time">22:00</span>
+                    <span class="programming-title">Jornal da Noite</span>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- SCRIPTS -->
-<script src="https://www.procurandocraques.com/app/assets/js/script.min.js"></script>
+    <!-- Botões Fixos -->
+    <a href="https://https://www.danelli.com.br/" class="fixed-button">IMOBILIÁRIA DANELLI</a>
+    <a href="https://tvvalenarede.webnode.page/?_gl=1*tgfs5g*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1LjkzMjUyOTk2Mi4xNzQyMzA0NTI5LjE3NDIzMDQ1Mjg." class="fixed-button-left">J.E.C.S</a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formulario = document.getElementById('meuFormulario');
+
+            formulario.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Validação do e-mail
+                const email = formulario.email.value;
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert('Por favor, insira um e-mail válido!');
+                    return;
+                }
+
+                // Validação da mensagem
+                if (formulario.mensagem.value.trim().length < 10) {
+                    alert('A mensagem deve ter pelo menos 10 caracteres!');
+                    return;
+                }
+
+                // Confirmação de envio
+                if (confirm('Deseja realmente enviar a mensagem?')) {
+                    formulario.submit();
+                    alert('Mensagem enviada com sucesso!');
+                    formulario.reset();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
