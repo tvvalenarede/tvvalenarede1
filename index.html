@@ -1,26 +1,23 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
-    <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2A3B47">
-<link rel="apple-touch-icon" href="logocerto.png">
-<link rel="icon" type="image/png" href="logocerto.png">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TVVALENAREDE & FACEBOOK</title>
-<link rel="icon" type="image/png" href="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2A3B47">
+    <link rel="apple-touch-icon" href="logocerto.png">
+    <link rel="icon" type="image/png" href="logocerto.png">
+    <link rel="icon" type="image/png" href="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png">
     <link rel="shortcut icon" href="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png" type="image/png">
     <link rel="apple-touch-icon" href="logocerto.png">
-<link rel="icon" type="image/png" href="logocerto.png">
-    
-    <!-- Ícone do site -->
+    <link rel="icon" type="image/png" href="logocerto.png">
     <link rel="icon" href="logo192.png" type="image/png">
     <link rel="apple-touch-icon" href="logo192.png">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- Manifest para Progressive Web App -->
     <link rel="manifest" href="manifest.json">
-
+    
     <style>
         :root {
             --primary: #2A3B47;
@@ -53,6 +50,69 @@
             font-size: 2.2rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
+        }
+
+        /* NOVA SEÇÃO PARA OS BOTÕES */
+        .top-buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #2A3B47 0%, #1a2530 100%);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .top-button {
+            padding: 1rem 1.5rem;
+            background: linear-gradient(to bottom, #FF8C00, #FF6B00);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            min-width: 200px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .top-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            background: linear-gradient(to bottom, #FF9E30, #FF7F20);
+        }
+
+        .top-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .top-button.perfumaria {
+            background: linear-gradient(to bottom, #FF6B9C, #D8436E);
+        }
+        
+        .top-button.perfumaria:hover {
+            background: linear-gradient(to bottom, #FF80AA, #E05C85);
+        }
+
+        .top-button.advogados {
+            background: linear-gradient(to bottom, #4A90E2, #2A5CAA);
+        }
+        
+        .top-button.advogados:hover {
+            background: linear-gradient(to bottom, #5CA0F0, #3A6CC0);
+        }
+
+        .top-button.casa-irmaos {
+            background: linear-gradient(to bottom, #34C759, #2AA44F);
+        }
+        
+        .top-button.casa-irmaos:hover {
+            background: linear-gradient(to bottom, #44D769, #3AB45F);
         }
 
         .grid-container {
@@ -344,6 +404,18 @@
             .news-title {
                 font-size: 2rem;
             }
+            
+            /* Responsivo para botões superiores */
+            .top-buttons-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+            }
+            
+            .top-button {
+                width: 90%;
+                margin-bottom: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -353,13 +425,20 @@
         <img src="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png" alt="Logo">
         <h1>TVVALENAREDE & FACEBOOK</h1>
     </header>
+    
+    <!-- NOVA SEÇÃO DE BOTÕES SUPERIORES -->
+    <div class="top-buttons-container">
+        <a href="https://tvvalenarede.github.io/bonani2/" class="top-button perfumaria">Perfumaria da Rita</a>
+        <a href="https://tvvalenarede.github.io/bonani2/" class="top-button advogados">J.E.C.S Advogados</a>
+        <a href="https://tvvalenarede.github.io/bonani2/" class="top-button casa-irmaos">Casa 3 Irmãos</a>
+    </div>
 
     <div class="grid-container">
         <!-- Sidebar Esquerda -->
         <div class="sidebar">
-            <a href="https://tvvalenarede.github.io/redesocial1/" class="nav-button agua-quente"> CONHEÇA AQUI O SUPER SITE DO MAICON JOGADOR DE FUTEBOL HS</a>
+            <a href="https://tvvalenarede.github.io/redesocial1/" class="nav-button agua-quente">  SITE DO MAICON JOGADOR</a>
             
-            <a href="https://www.facebook.com/TVRBRAZIL" class="nav-button agua-quente" class="nav-button">TVVALENAREDE LIVE</a>
+            <a href="https://www.facebook.com/TVRBRAZIL" class="nav-button agua-quente" class="nav-button">TVVALENAREDE AO VIVO</a>
             <a href="https://tvvalenarede.github.io/jogos/" class="nav-button">Shekinah Energéticos</a>
             <a href="https://casa3-irmaos.webnode.page" class="nav-button">CASA 3 IRMÃOS</a>
             <a href="https://www.youtube.com/watch?v=z2j0Yzf8Myk&t=34s" class="nav-button">PREMIAÇÃO ACEESP</a>
@@ -462,45 +541,45 @@
                 <h2>Programação TVVALENAREDE</h2>
                 
                 <div class="programming-item">
-                    <span class="programming-time">06:00</span>
-                    <span class="programming-title">Bom Dia Valenarede</span>
+                    <span class="programming-time"> Segunda Feira 19:30</span>
+                    <span class="programming-title">Tvvalenarede Futebol</span>
                 </div>
                 
                 <div class="programming-item">
-                    <span class="programming-time">09:00</span>
-                    <span class="programming-title">Jornal da Manhã</span>
+                    <span class="programming-time">Terça Feira 19:30</span>
+                    <span class="programming-title">Tvvalenarede Criações</span>
                 </div>
                 
                 <div class="programming-item">
-                    <span class="programming-time">12:00</span>
-                    <span class="programming-title">Almoço Notícias</span>
+                    <span class="programming-time"> Quarta-Feira 19:30</span>
+                    <span class="programming-title">Tvvalenarede Notícias</span>
                 </div>
                 
                 <div class="programming-item">
-                    <span class="programming-time">15:00</span>
-                    <span class="programming-title">Tarde Esportiva</span>
+                    <span class="programming-time">Quinta Feira 19:30</span>
+                    <span class="programming-title">Tvvalenarede Convidados</span>
                 </div>
                 
                 <div class="programming-item">
-                    <span class="programming-time">18:00</span>
-                    <span class="programming-title">Jornal da TVVALENAREDE</span>
+                    <span class="programming-time"> Sexta Feira 19:30</span>
+                    <span class="programming-title">Tvvalenarede Humor</span>
                 </div>
                 
                 <div class="programming-item">
-                    <span class="programming-time">20:00</span>
-                    <span class="programming-title">Programa de Entrevistas</span>
+                    <span class="programming-time"> Sábado 16:00</span>
+                    <span class="programming-title">Tvvalenarede Live</span>
                 </div>
                 
                 <div class="programming-item">
-                    <span class="programming-time">22:00</span>
-                    <span class="programming-title">Jornal da Noite</span>
+                    <span class="programming-time"> Domingo 10:00</span>
+                    <span class="programming-title">Resumo da semana</span>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Botões Fixos -->
-    <a href="https://https://www.danelli.com.br/" class="fixed-button">IMOBILIÁRIA DANELLI</a>
+    <a href="https://www.youtube.com/watch?v=ll-BtWdFNUc&t=66s" class="fixed-button">PROGRAMA SHEKINAH</a>
     <a href="https://tvvalenarede.webnode.page/?_gl=1*tgfs5g*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1LjkzMjUyOTk2Mi4xNzQyMzA0NTI5LjE3NDIzMDQ1Mjg." class="fixed-button-left">J.E.C.S</a>
 
     <script>
