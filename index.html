@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,39 +16,157 @@
     <link rel="apple-touch-icon" href="logo192.png">
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #2A3B47;
-            --secondary: #B38E5D;
-            --accent: #FF6B00;
-            --orange: #FF8C00;
+            --primary: #232f3e;
+            --secondary: #ff9900;
+            --accent: #146eb4;
+            --orange: #ff8c00;
+            --dark-bg: #131a22;
+            --light-bg: #f2f2f2;
+            --text-dark: #333;
+            --text-light: #fff;
+            --card-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            --hover-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background: #f9f9f9;
+            background: var(--light-bg);
             line-height: 1.6;
+            color: var(--text-dark);
         }
 
-        .main-header {
+        /* Header estilo Amazon */
+        .amazon-header {
+            background: var(--dark-bg);
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo-container h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            max-width: 600px;
+            margin: 0 2rem;
+            display: flex;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-bar button {
+            padding: 0.7rem 1rem;
+            background: var(--secondary);
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-item {
+            margin-left: 1.5rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-item span:first-child {
+            font-size: 0.75rem;
+        }
+
+        .nav-item span:last-child {
+            font-weight: bold;
+        }
+
+        .cart-count {
+            background: var(--secondary);
+            color: var(--text-dark);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+        }
+
+        /* Menu de navegação secundário */
+        .secondary-nav {
             background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            border-bottom: 3px solid var(--secondary);
+            padding: 0.5rem 1rem;
         }
 
-        .main-header h1 {
-            font-size: 2.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+        .nav-links {
+            display: flex;
+            list-style: none;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav-links li {
+            margin-right: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links i {
+            margin-right: 5px;
         }
 
         /* NOVA SEÇÃO PARA OS BOTÕES */
@@ -60,22 +175,22 @@
             justify-content: center;
             gap: 1rem;
             padding: 1.5rem;
-            background: linear-gradient(135deg, #2A3B47 0%, #1a2530 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark-bg) 100%);
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .top-button {
             padding: 1rem 1.5rem;
-            background: linear-gradient(to bottom, #FF8C00, #FF6B00);
-            color: white;
+            background: linear-gradient(to bottom, var(--secondary), var(--orange));
+            color: var(--text-light);
             border: none;
-            border-radius: 50px;
+            border-radius: 4px;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: var(--card-shadow);
             min-width: 200px;
             text-align: center;
             text-decoration: none;
@@ -83,14 +198,13 @@
         }
 
         .top-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            transform: translateY(-3px);
+            box-shadow: var(--hover-shadow);
             background: linear-gradient(to bottom, #FF9E30, #FF7F20);
         }
 
         .top-button:active {
             transform: translateY(0);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .top-button.perfumaria {
@@ -117,85 +231,212 @@
             background: linear-gradient(to bottom, #44D769, #3AB45F);
         }
 
-        .grid-container {
+        /* Layout principal */
+        .main-container {
             display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            gap: 2rem;
-            padding: 2rem;
+            grid-template-columns: 250px 1fr;
+            gap: 1.5rem;
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
+        /* Sidebar Esquerda */
         .sidebar {
             background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1rem;
+            border-radius: 4px;
+            box-shadow: var(--card-shadow);
+            height: fit-content;
         }
 
         .nav-button {
-            display: block;
+            display: flex;
+            align-items: center;
             width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
             background: var(--primary);
-            color: white;
+            color: var(--text-light);
             text-decoration: none;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button i {
+            margin-right: 8px;
         }
 
         .nav-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            background: var(--secondary);
+            transform: translateX(5px);
+            box-shadow: var(--hover-shadow);
+            background: var(--accent);
         }
 
         /* Estilo especial para o primeiro botão */
         .nav-button.agua-quente {
-            background: #FF0000; /* Vermelho */
-            color: #FFFF00; /* Amarelo */
+            background: #FF0000;
+            color: #FFFF00;
         }
 
         .nav-button.agua-quente:hover {
-            background: #CC0000; /* Vermelho mais escuro no hover */
-            color: #FFFF00; /* Mantém amarelo no hover */
+            background: #CC0000;
+            color: #FFFF00;
         }
 
+        /* Conteúdo Principal */
         .main-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
+        /* Seção de Notícias em Destaque */
+        .news-highlights {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .news-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 1rem;
+        }
+
+        .news-category {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--text-dark);
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .news-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* Seção de Fotos do Dia */
+        .daily-photos {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Social Grid */
         .social-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            gap: 1rem;
+            margin: 1rem 0;
         }
 
         .social-card {
             background: var(--primary);
-            color: white;
+            color: var(--text-light);
             padding: 1.5rem;
-            border-radius: 10px;
+            border-radius: 4px;
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
+            text-decoration: none;
         }
 
         .social-card:hover {
-            transform: scale(1.05);
-            background: var(--secondary);
+            transform: scale(1.03);
+            background: var(--accent);
         }
 
+        /* Formulário de Contato */
         .contact-form {
             background: var(--primary);
-            padding: 2rem;
-            border-radius: 10px;
-            color: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            color: var(--text-light);
+            margin-top: 1.5rem;
         }
 
         .contact-form input,
@@ -203,39 +444,52 @@
             width: 100%;
             padding: 0.8rem;
             margin: 0.5rem 0;
-            border: 2px solid var(--secondary);
-            border-radius: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
             background: rgba(255,255,255,0.9);
         }
 
         .contact-form button {
             background: var(--secondary);
-            color: white;
-            padding: 1rem 2rem;
+            color: var(--text-dark);
+            padding: 0.8rem 1.5rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             width: 100%;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: background 0.3s;
+            font-weight: bold;
         }
 
         .contact-form button:hover {
-            background: var(--accent);
+            background: #ffaa33;
         }
 
+        /* Sidebar Direita */
+        .right-sidebar {
+            display: none; /* Vamos ocultar a sidebar direita original */
+        }
+
+        /* Botões Fixos */
         .fixed-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background: var(--accent);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 30px;
+            color: var(--text-light);
+            padding: 1rem;
+            border-radius: 50%;
             text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: var(--hover-shadow);
             transition: transform 0.3s;
             z-index: 1000;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
         }
 
         .fixed-button-left {
@@ -243,190 +497,217 @@
             bottom: 20px;
             left: 20px;
             background: var(--orange);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 30px;
+            color: var(--text-light);
+            padding: 1rem;
+            border-radius: 50%;
             text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: var(--hover-shadow);
             transition: transform 0.3s;
             z-index: 1000;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
         }
 
         .fixed-button:hover,
         .fixed-button-left:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
             filter: brightness(1.1);
         }
 
-        /* NOVOS ESTILOS PARA A SEÇÃO DE NOTÍCIAS */
-        .news-section {
+        .button-text {
+            display: none;
+        }
+
+        /* Footer */
+        .main-footer {
+            background: var(--dark-bg);
+            color: var(--text-light);
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .news-title {
-            text-align: center;
-            font-size: 3rem;
-            margin: 2rem 0;
-            color: var(--primary);
-            text-transform: uppercase;
-        }
-        
-        .news-container {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
-        
-        .videos-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-        
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-        }
-        
-        .news-column {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .news-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .news-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .news-item h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .news-item p {
-            color: #555;
-            font-size: 0.95rem;
-        }
-        
-        .news-item time {
-            display: block;
-            color: #888;
-            font-size: 0.8rem;
-            margin-top: 0.5rem;
-        }
-        
-        .news-category {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .programming-column {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .programming-item {
-            display: flex;
+
+        .footer-section h3 {
             margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
+            color: var(--secondary);
         }
-        
-        .programming-time {
-            font-weight: bold;
-            color: var(--primary);
-            margin-right: 1rem;
-            min-width: 60px;
+
+        .footer-links {
+            list-style: none;
         }
-        
-        .programming-title {
-            color: #333;
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                display: none;
+            }
+            
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            .search-bar {
+                order: 3;
+                max-width: 100%;
+                margin: 1rem 0 0;
+            }
         }
 
         @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
-
-            .sidebar {
-                order: -1;
-            }
-
-            .main-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .fixed-button,
-            .fixed-button-left {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-                bottom: 10px;
+            .nav-links {
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
             }
             
-            /* Responsivo para seção de notícias */
-            .news-container {
-                grid-template-columns: 1fr;
+            .nav-links li {
+                margin-right: 1rem;
+                white-space: nowrap;
             }
             
-            .videos-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .news-title {
-                font-size: 2rem;
-            }
-            
-            /* Responsivo para botões superiores */
             .top-buttons-container {
                 flex-direction: column;
                 align-items: center;
-                padding: 1rem;
             }
             
             .top-button {
-                width: 90%;
+                width: 100%;
                 margin-bottom: 0.5rem;
+            }
+            
+            .news-grid,
+            .photos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .fixed-button,
+            .fixed-button-left {
+                bottom: 70px;
+            }
+            
+            .fixed-button-left {
+                left: 10px;
+            }
+            
+            .fixed-button {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-item {
+                margin-left: 0.8rem;
+                font-size: 0.8rem;
+            }
+            
+            .logo-container h1 {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Cabeçalho com o logo e título -->
-    <header class="main-header">
-        <img src="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png" alt="Logo">
-        <h1>TVVALENAREDE & FACEBOOK</h1>
+    <!-- Header estilo Amazon -->
+    <header class="amazon-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png" alt="Logo TVVALENAREDE">
+                <h1>TVVALENAREDE</h1>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar no site...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="nav-right">
+                <a href="#" class="nav-item">
+                    <span>Olá, Faça login</span>
+                    <span>Sua Conta</span>
+                </a>
+                
+                <a href="#" class="nav-item" style="position: relative;">
+                    <span>Retornos</span>
+                    <span>e Pedidos</span>
+                </a>
+                
+                <a href="#" class="nav-item" style="position: relative;">
+                    <span>Seu</span>
+                    <span>Carrinho</span>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
     </header>
+    
+    <!-- Menu de navegação secundário -->
+    <nav class="secondary-nav">
+        <ul class="nav-links">
+            <li><a href="#"><i class="fas fa-bars"></i> Todos</a></li>
+            <li><a href="#">Notícias do Dia</a></li>
+            <li><a href="#">Vídeos</a></li>
+            <li><a href="#">Programação</a></li>
+            <li><a href="#">Esportes</a></li>
+            <li><a href="#">Entretenimento</a></li>
+            <li><a href="#">Tecnologia</a></li>
+            <li><a href="#">Mais</a></li>
+        </ul>
+    </nav>
     
     <!-- NOVA SEÇÃO DE BOTÕES SUPERIORES -->
     <div class="top-buttons-container">
@@ -435,19 +716,104 @@
         <a href="https://casa3-irmaos.webnode.page/" class="top-button casa-irmaos">Casa 3 Irmãos</a>
     </div>
 
-    <div class="grid-container">
+    <div class="main-container">
         <!-- Sidebar Esquerda -->
         <div class="sidebar">
-            <a href="https://tvvalenarede.github.io/redesocial1/" class="nav-button agua-quente">  SITE DO MAICON JOGADOR</a>
+            <a href="https://tvvalenarede.github.io/redesocial1/" class="nav-button agua-quente">
+                <i class="fas fa-futbol"></i> SITE DO MAICON JOGADOR
+            </a>
             
-            <a href="https://www.facebook.com/TVRBRAZIL" class="nav-button agua-quente" class="nav-button">TVVALENAREDE AO VIVO</a>
-            <a href="https://tvvalenarede.github.io/jogos/" class="nav-button">Shekinah Energéticos</a>
-            <a href="https://casa3-irmaos.webnode.page" class="nav-button">CASA 3 IRMÃOS</a>
-            <a href="https://www.youtube.com/watch?v=z2j0Yzf8Myk&t=34s" class="nav-button">PREMIAÇÃO ACEESP</a>
+            <a href="https://www.facebook.com/TVRBRAZIL" class="nav-button agua-quente">
+                <i class="fas fa-tv"></i> TVVALENAREDE AO VIVO
+            </a>
+            <a href="https://tvvalenarede.github.io/jogos/" class="nav-button">
+                <i class="fas fa-energy-drink"></i> Shekinah Energéticos
+            </a>
+            <a href="https://casa3-irmaos.webnode.page" class="nav-button">
+                <i class="fas fa-home"></i> CASA 3 IRMÃOS
+            </a>
+            <a href="https://www.youtube.com/watch?v=z2j0Yzf8Myk&t=34s" class="nav-button">
+                <i class="fas fa-trophy"></i> PREMIAÇÃO ACEESP
+            </a>
+            <a href="https://made-center7.webnode.page" class="nav-button">
+                <i class="fas fa-futbol"></i> FUTEBOL
+            </a>
+            <a href="https://www.youtube.com/channel/UC2d71oRHuTsosOap7GeYT4g" class="nav-button">
+                <i class="fab fa-youtube"></i> YOUTUBE LIVE
+            </a>
+            <a href="https://bar-do-osmar-de-taubate-s-p.webnode.page/" class="nav-button">
+                <i class="fas fa-beer"></i> BAR DO OSMAR
+            </a>
+            <a href="https://serginhos-centro-automotivo-de-taubate.webnode.page/" class="nav-button">
+                <i class="fas fa-car"></i> SERGINHO PNEUS
+            </a>
         </div>
 
         <!-- Conteúdo Principal -->
         <div class="main-content">
+            <!-- Seção de Notícias em Destaque -->
+            <section class="news-highlights">
+                <h2 class="section-title">Notícias em Destaque</h2>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <img src="https://picsum.photos/600/400?random=1" alt="Notícia" class="news-image">
+                        <div class="news-content">
+                            <span class="news-category">Política</span>
+                            <h3 class="news-title">Novas medidas econômicas são anunciadas pelo governo</h3>
+                            <p class="news-excerpt">O ministro da economia apresentou hoje um pacote com medidas para estimular o crescimento econômico.</p>
+                            <span class="news-date">Há 2 horas</span>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <img src="https://picsum.photos/600/400?random=2" alt="Notícia" class="news-image">
+                        <div class="news-content">
+                            <span class="news-category">Esportes</span>
+                            <h3 class="news-title">Time local vence campeonato estadual</h3>
+                            <p class="news-excerpt">Com uma vitória por 3 a 1, o time da cidade conquistou o título estadual após 10 anos de espera.</p>
+                            <span class="news-date">Há 5 horas</span>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <img src="https://picsum.photos/600/400?random=3" alt="Notícia" class="news-image">
+                        <div class="news-content">
+                            <span class="news-category">Cultura</span>
+                            <h3 class="news-title">Festival de cinema começa nesta sexta</h3>
+                            <p class="news-excerpt">A 15ª edição do festival traz produções nacionais e internacionais com entrada gratuita.</p>
+                            <span class="news-date">Há 8 horas</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            <!-- Seção de Fotos do Dia -->
+            <section class="daily-photos">
+                <h2 class="section-title">Fotos do Dia</h2>
+                <div class="photos-grid">
+                    <div class="photo-item">
+                        <img src="https://picsum.photos/400/300?random=4" alt="Foto do dia">
+                        <div class="photo-caption">Evento cultural na cidade atrai milhares de pessoas</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://picsum.photos/400/300?random=5" alt="Foto do dia">
+                        <div class="photo-caption">Inauguração da nova unidade de saúde no bairro</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://picsum.photos/400/300?random=6" alt="Foto do dia">
+                        <div class="photo-caption">Protesto pacífico reúne manifestantes no centro</div>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="https://picsum.photos/400/300?random=7" alt="Foto do dia">
+                        <div class="photo-caption">Nova ponte facilita acesso entre os bairros</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Social Grid -->
             <div class="social-grid">
                 <a href="https://made-center7.webnode.page" class="social-card">FUTEBOL</a>
                 <a href="https://www.youtube.com/channel/UC2d71oRHuTsosOap7GeYT4g" class="social-card">TVVALENAREDE YOUTUBE LIVE</a>
@@ -457,7 +823,9 @@
                 <a href="https://serginhos-centro-automotivo-de-taubate.webnode.page/" class="social-card">SERGINHO PNEUS</a>
             </div>
 
+            <!-- Formulário de Contato -->
             <form class="contact-form" id="meuFormulario" action="https://formsubmit.co/tvrbrazil@gmail.com" method="POST">
+                <h3>Entre em Contato</h3>
                 <input type="text" id="nome" name="Nome" placeholder="Nome" required>
                 <input type="email" id="email" name="E-mail" placeholder="E-mail" required>
                 <textarea id="mensagem" name="Mensagem" rows="5" placeholder="Mensagem" required></textarea>
@@ -465,124 +833,56 @@
                 <button type="submit">ENVIAR MENSAGEM</button>
             </form>
         </div>
-
-        <!-- Sidebar Direita -->
-        <div class="sidebar">
-            <a href="https://www.facebook.com/?locale=pt_BR" class="nav-button">FACEBOOK</a>
-            <a href="https://www.facebook.com/tvvalenarede2" class="nav-button">FACEBOOK2</a>
-            <a href="https://www.instagram.com/tvvalenarede?igsh=aWF0bjdueGR5N3cw" class="nav-button">INSTAGRAM1</a>
-            <a href="https://www.instagram.com/tvvalenarede2/" class="nav-button">INSTAGRAM2</a>
-            <a href="http://youtube.com/tvvalenarede" class="nav-button">YOUTUBE</a>
-            <a href="https://www.tiktok.com/@tvvalenarede?_t=ZM-8uwnC2d12ZD&_r=1" class="nav-button">TIKTOK</a>
-        </div>
     </div>
 
-    <!-- NOVA SEÇÃO DE NOTÍCIAS E VÍDEOS -->
-    <div class="news-section">
-        <h2 class="news-title">TVVALENAREDE NOTÍCIAS</h2>
-        
-        <!-- Container de Vídeos -->
-        <div class="videos-container">
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/z2j0Yzf8Myk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h3>PREMIAÇÃO ACEESP</h3>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Conheça-nos</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Informações corporativas</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Comunidade</a></li>
+                    <li><a href="#">Acessibilidade</a></li>
+                </ul>
             </div>
             
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h3>Últimas Notícias do Brasil</h3>
+            <div class="footer-section">
+                <h3>Deixe-nos ajudar você</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Sua conta</a></li>
+                    <li><a href="#">Frete e prazo de entrega</a></li>
+                    <li><a href="#">Devoluções e reembolsos</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                </ul>
             </div>
             
-            <div class="video-item">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/TVRBRAZIL" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/tvvalenarede" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="http://youtube.com/tvvalenarede" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@tvvalenarede" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
-                <h3>Entrevistas Exclusivas</h3>
             </div>
         </div>
         
-        <!-- Container de Notícias e Programação -->
-        <div class="news-container">
-            <div class="news-column">
-                <h2>Últimas Notícias</h2>
-                
-                <div class="news-item">
-                    <span class="news-category">Política</span>
-                    <h3>Novas medidas econômicas são anunciadas pelo governo</h3>
-                    <p>O ministro da economia apresentou hoje um pacote com medidas para estimular o crescimento econômico e conter a inflação.</p>
-                    <time>Há 2 horas</time>
-                </div>
-                
-                <div class="news-item">
-                    <span class="news-category">Esportes</span>
-                    <h3>Time local vence campeonato estadual</h3>
-                    <p>Com uma vitória por 3 a 1, o time da cidade conquistou o título estadual após 10 anos de espera.</p>
-                    <time>Há 5 horas</time>
-                </div>
-                
-                <div class="news-item">
-                    <span class="news-category">Cultura</span>
-                    <h3>Festival de cinema começa nesta sexta</h3>
-                    <p>A 15ª edição do festival traz produções nacionais e internacionais com entrada gratuita em diversos locais da cidade.</p>
-                    <time>Há 8 horas</time>
-                </div>
-                
-                <div class="news-item">
-                    <span class="news-category">Saúde</span>
-                    <h3>Nova unidade de saúde é inaugurada</h3>
-                    <p>O prefeito inaugurou hoje a nova UPA que vai atender mais de 50 mil pessoas na região norte da cidade.</p>
-                    <time>Ontem, 18:30</time>
-                </div>
-            </div>
-            
-            <div class="programming-column">
-                <h2>Programação TVVALENAREDE</h2>
-                
-                <div class="programming-item">
-                    <span class="programming-time"> Segunda Feira 19:30</span>
-                    <span class="programming-title">Tvvalenarede Futebol</span>
-                </div>
-                
-                <div class="programming-item">
-                    <span class="programming-time">Terça Feira 19:30</span>
-                    <span class="programming-title">Tvvalenarede Criações</span>
-                </div>
-                
-                <div class="programming-item">
-                    <span class="programming-time"> Quarta-Feira 19:30</span>
-                    <span class="programming-title">Tvvalenarede Notícias</span>
-                </div>
-                
-                <div class="programming-item">
-                    <span class="programming-time">Quinta Feira 19:30</span>
-                    <span class="programming-title">Tvvalenarede Convidados</span>
-                </div>
-                
-                <div class="programming-item">
-                    <span class="programming-time"> Sexta Feira 19:30</span>
-                    <span class="programming-title">Tvvalenarede Humor</span>
-                </div>
-                
-                <div class="programming-item">
-                    <span class="programming-time"> Sábado 16:00</span>
-                    <span class="programming-title">Tvvalenarede Live</span>
-                </div>
-                
-                <div class="programming-item">
-                    <span class="programming-time"> Domingo 10:00</span>
-                    <span class="programming-title">Resumo da semana</span>
-                </div>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TVVALENAREDE.COM.BR - Todos os direitos reservados</p>
         </div>
-    </div>
+    </footer>
 
     <!-- Botões Fixos -->
-    <a href="https://www.youtube.com/watch?v=ll-BtWdFNUc&t=66s" class="fixed-button">PROGRAMA SHEKINAH</a>
-    <a href="https://tvvalenarede.webnode.page/?_gl=1*tgfs5g*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1LjkzMjUyOTk2Mi4xNzQyMzA0NTI5LjE3NDIzMDQ1Mjg." class="fixed-button-left">J.E.C.S</a>
+    <a href="https://www.youtube.com/watch?v=ll-BtWdFNUc&t=66s" class="fixed-button">
+        <i class="fas fa-tv"></i>
+        <span class="button-text">PROGRAMA SHEKINAH</span>
+    </a>
+    <a href="https://tvvalenarede.webnode.page/?_gl=1*tgfs5g*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1LjkzMjUyOTk2Mi4xNzQyMzA0NTI5LjE3NDIzMDQ1Mjg." class="fixed-button-left">
+        <i class="fas fa-balance-scale"></i>
+        <span class="button-text">J.E.C.S</span>
+    </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -611,6 +911,9 @@
                     formulario.reset();
                 }
             });
+            
+            // Simulação de carregamento de notícias (em um cenário real, isso viria de uma API)
+            console.log("Site TVVALENAREDE carregado com sucesso!");
         });
     </script>
 </body>
