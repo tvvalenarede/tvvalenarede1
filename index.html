@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,6 +27,23 @@
             color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Marca d'água com a imagem hero */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('OLIMUSAR20.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15; /* Ajuste a opacidade conforme necessário */
+            z-index: -1;
+            pointer-events: none;
         }
         
         .container {
@@ -176,25 +192,34 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
+        /* Hero Section - REMOVIDA A IMAGEM DE FUNDO */
         .hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.9)), url('OLIMUSAR.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.85));
             color: white;
             text-align: center;
             padding: 180px 0 100px;
             margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .hero p {
             font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
         /* Sobre Section */
@@ -220,6 +245,7 @@
             height: auto;
             display: block;
             transition: transform 0.5s ease;
+            filter: brightness(1.05);
         }
         
         .sobre-img img:hover {
@@ -512,7 +538,7 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>Delegado Olim no Vale do Paraíba</h1>
-            <p>Conteúdo exclusivo e estratégias de marketing para potencializar sua presença online e alcançar resultados extraordinários.</p>
+            <p>O DR.OLIM esteve em Taubaté, Aparecida do Norte, Cunha e Caçapava e fez entrega de 2 Milhões de reais para a região.</p>
             <a href="#videos" class="btn">Ver Vídeos</a>
         </div>
     </section>
@@ -548,7 +574,7 @@
                     </div>
                     <div class="video-info">
                         <h3>DR.OLIM DEPUTADO E DELEGADO EM CUNHA S.P </h3>
-                        <p>No lançamento do livro "PREVENÇAO EM AÇÃO"e deu Hum Milhão de reais para o Prefeito Rodrigo do Neto.</p>
+                        <p>No lançamento do livro "PREVENÇAO EM AÇÃO"e destinou Um Milhão de reais para o Prefeito Rodrigo do Neto para investimento na cidade.</p>
                     </div>
                 </div>
                 
@@ -570,7 +596,7 @@
                     </div>
                     <div class="video-info">
                         <h3>DR.OLIM DEPUTADO E DELEGADO EM CAÇAPAVA.</h3>
-                        <p>Ele deu Um Milhão de reais para o prefeito Yan Lopes de Almeida para investimento na segurança da cidade..</p>
+                        <p>Ele destinou Um Milhão de reais para o prefeito Yan Lopes de Almeida para investimento na segurança da cidade.</p>
                     </div>
                 </div>
                 
@@ -580,8 +606,8 @@
                         <iframe src="https://www.youtube.com/embed/zF_balQyJTY" title="Vídeo 4" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
-                        <h3> DR.OLIM ENTREGA UM MILHÃO DE REAIS PARA CAÇAPAVA.</h3>
-                        <p>O prefeito Yan Lopes ficou muito satisfeito e fará investimento na segurança da cidade..</p>
+                        <h3> DR.OLIM DESTINOU UM MILHÃO DE REAIS PARA CAÇAPAVA.</h3>
+                        <p>O prefeito Yan Lopes ficou muito satisfeito e fará investimento na segurança da cidade.</p>
                     </div>
                 </div>
                 
@@ -780,4 +806,3 @@
     </script>
 </body>
 </html>
-
